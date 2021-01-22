@@ -61,10 +61,16 @@ jobs:
           - test:one ember-lts-3.12
           - test:one ember-release
           - test:one ember-beta
-          - test:one ember-canary
         allow-failure: [false]
         include:
-          - test-suite: "test:one ember-canary"
+          - workspace: ember-simple-auth
+            test-suite: "test:one ember-canary"
+            allow-failure: true
+          - workspace: classic-test-app
+            test-suite: "test:one ember-canary"
+            allow-failure: true
+          - workspace: test-app
+            test-suite: "test:one ember-canary"
             allow-failure: true
 
     steps:
